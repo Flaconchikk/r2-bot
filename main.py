@@ -45,8 +45,12 @@ def send_to_telegram(text):
     requests.post(url, json=payload, timeout=20)
 
 print("Discord → Telegram bot started")
-
-send_to_telegram("🚨 TEST: бот стартовл и Telegram доступен")
+print("=== TELEGRAM DEBUG ===")
+r = requests.post(
+    f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage",
+    json={"chat_id": TG_CHAT_ID, "text": "DEBUG_FROM_CODE"},
+)
+print("TG RESPONSE:", r.status_code, r.text)
 
 
 while True:
