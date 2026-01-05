@@ -46,6 +46,9 @@ def send_to_telegram(text):
 
 print("Discord → Telegram bot started")
 
+send_to_telegram("🚨 TEST: бот стартовал и Telegram доступен")
+
+
 while True:
     try:
         msg = get_latest_message()
